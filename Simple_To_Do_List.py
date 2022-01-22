@@ -42,6 +42,14 @@ def save_tasks():
     tasks = listbox_tasks.get(0, listbox_tasks.size())
     pickle.dump(tasks, open("tasks.dat", "wb"))
 
+def key_pressed(event):
+    #if user presses Enter, add the task
+    if event.char == '\r':
+        add_task()
+
+#Bind it so key_pressed is called when, you guessed it, a key is pressed.
+root.bind("<Key>",key_pressed)
+
 # Create GUI
 
 frame_tasks = tkinter.Frame(root)
