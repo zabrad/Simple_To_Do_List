@@ -46,7 +46,10 @@ def key_pressed(event):
     #if user presses Enter, add the task
     if event.char == '\r':
         add_task()
-
+    
+    #if user presses Backspace, delete the task
+    if event.char == '\x08':
+        delete_task()
 #Bind it so key_pressed is called when, you guessed it, a key is pressed.
 root.bind("<Key>",key_pressed)
 
